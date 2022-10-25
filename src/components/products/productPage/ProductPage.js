@@ -76,7 +76,7 @@ function ProductPage() {
 
 
   const [product, setProduct]= useState(false)
-        axios.get(`http://localhost:8080/${params.id}`).then(res=>{
+        axios.get(`https://prideserver.herokuapp.com/${params.id}`).then(res=>{
           setProduct(res.data[0])
         }
         )

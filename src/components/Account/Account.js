@@ -19,7 +19,7 @@ function Account() {
   const user = JSON.parse(localStorage.getItem('user'))
   const skincode=JSON.parse(localStorage.getItem('skincode'))
   if(skincode!==""){
-    axios.get(`http://localhost:8080/code/a/z/${skincode}`).then((res)=>{
+    axios.get(`https://prideserver.herokuapp.com/code/a/z/${skincode}`).then((res)=>{
       dispatch(changeProduct(res.data)) ;
       setProductContent(<Products/>)
   

@@ -67,7 +67,7 @@ function SignUp() {
             return
         }
             else{
-                axios.post('http://localhost:8080/users/register', form).then(
+                axios.post('https://prideserver.herokuapp.com/users/register', form).then(
                     (res)=>{
                             navigate('/auth/login')                    
                     }

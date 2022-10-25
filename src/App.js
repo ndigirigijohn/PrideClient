@@ -20,7 +20,7 @@ import Result from './components/result/Result';
 
 function App() {
   const dispatch = useDispatch();
-  const url=`http://localhost:8080/1/9`
+  const url=`https://prideserver.herokuapp.com/1/9`
   const getProducts= axios.get(url)
   useEffect(()=>{
     dispatch(changeProduct([]));

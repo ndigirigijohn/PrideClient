@@ -15,11 +15,11 @@ function Filter() {
    useEffect(
     ()=>{
       if(filters.length===0){
-        axios.get('http://localhost:8080/1/10').then((response)=>{
+        axios.get('https://prideserver.herokuapp.com/1/10').then((response)=>{
           dispatch(changeProduct(response.data)) 
         })
       }
-      axios.post('http://localhost:8080/filters/categories',{categories:filters}).then(
+      axios.post('https://prideserver.herokuapp.com/filters/categories',{categories:filters}).then(
         (response)=>{
           console.log(response)
           

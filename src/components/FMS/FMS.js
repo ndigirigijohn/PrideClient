@@ -12,7 +12,7 @@ import { BsSearch } from 'react-icons/bs';
 
 
 
-//http://localhost:8080/code/a/z/1010
+//https://prideserver.herokuapp.com/code/a/z/1010
 
 function FMS() {
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const [optionsState, setOptionsState] = useState('all');
 useEffect(()=>{
   console.log(optionsState)
   if(flag){
-    axios.get(`http://localhost:8080/code/a/z/${code}`).then((res)=>{
+    axios.get(`https://prideserver.herokuapp.com/code/a/z/${code}`).then((res)=>{
       localStorage.setItem('skincode', JSON.stringify(code));
       dispatch(changeProduct(res.data))
 
@@ -40,7 +40,7 @@ useEffect(()=>{
 
     )
     if(user!==null){
-      axios.put(`http://localhost:8080/users/set/${user._id}`, {code: code}).then((res)=>{
+      axios.put(`https://prideserver.herokuapp.com/users/set/${user._id}`, {code: code}).then((res)=>{
         console.log(res)
       })
     }
@@ -51,14 +51,14 @@ useEffect(()=>{
 const handleSearch = event => {
   try{
     if(optionsState==='all'){
-      axios.get(`http://localhost:8080/products/search/${search}`).then((res)=>{
+      axios.get(`https://prideserver.herokuapp.com/products/search/${search}`).then((res)=>{
         dispatch(changeProduct(res.data))
         navigate(`/result/${optionsState}/${search}`)
 
       })
     
     }
-    axios.get(`http://localhost:8080/products/search/${optionsState}/${search}`).then((response)=>{
+    axios.get(`https://prideserver.herokuapp.com/products/search/${optionsState}/${search}`).then((response)=>{
       dispatch(changeProduct(response.data))  ;
       navigate(`/result/${optionsState}/${search}`)
     })

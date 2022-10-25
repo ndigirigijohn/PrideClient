@@ -28,7 +28,7 @@ const onUpdateField = e => {
   };
   const onSubmitForm = e => {
     e.preventDefault();
-      axios.post('http://localhost:8080/feedback', form).then(
+      axios.post('https://prideserver.herokuapp.com/feedback', form).then(
         (res)=>{
           notify();
         }
