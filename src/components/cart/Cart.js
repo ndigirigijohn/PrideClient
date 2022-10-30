@@ -113,14 +113,18 @@ const handleCheckout=()=>{
     return
   }
   const order={
-    userid:user._id,
-    items:cart,
-    count:itemsCount,
-    shipping:shipping,
-    total:total+shipping
-  }
+    "userId":user._id,
+    "name":user.name,
+    "phone":user.contact.phone,
+    "email":user.contact.email,
+    "count":itemsCount,
+    "shipping":shipping,
+    "total":total,
+    "items":cart
+}
+
   notify("Your order is being processed")
-  axios.post('https://prideserver.herokuapp.com/orders/', order).then(res=>{
+  axios.post('https://prideserver.herokuapp.com/orders/makeorder', order).then(res=>{
     notify("Your order was placed succesfully");
     dispatch(changeCart([]))
     setProcessing(false)
