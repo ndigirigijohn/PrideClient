@@ -1,8 +1,11 @@
 import React from 'react'
+import AdminNav from '../adminnav/AdminNav'
 
 function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <AdminNav title={"Dashboard"}/>
+    </div>
   )
 }
 

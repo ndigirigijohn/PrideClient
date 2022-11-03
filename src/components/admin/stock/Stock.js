@@ -1,8 +1,13 @@
 import React from 'react'
+import AdminNav from '../adminnav/AdminNav'
+
 
 function Stock() {
   return (
-    <div>Stock</div>
+    <div>
+             <AdminNav title={'Stock'}/>
+
+    </div>
   )
 }
 

@@ -1,8 +1,11 @@
 import React from 'react'
-
+import AdminNav from '../adminnav/AdminNav'
 function Offers() {
   return (
-    <div>Offers</div>
+    <div>
+       <AdminNav title={'Offers'}/>
+
+    </div>
   )
 }
 

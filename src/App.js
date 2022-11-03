@@ -27,6 +27,7 @@ import Offers from './components/admin/offers/Offers';
 import Products from './components/admin/products/Products';
 import Statistics from './components/admin/statistics/Statistics';
 import Stock from './components/admin/stock/Stock';
+import Dashboard from './components/admin/dashboard/Dashboard';
 function App() {
   const dispatch = useDispatch();
   const url=`https://prideserver.herokuapp.com/1/9`
@@ -60,7 +61,7 @@ function App() {
         <Route path='/fms' element={<FMS/>}/>
         <Route path='/cart' element={<Cart/>} />
         <Route path='/account' element={<Account/>}>
-          <Route index path='/account/dashboard' element={<Orders/>}/>
+          <Route index path='/account/orders' element={<Orders/>}/>
           <Route path='/account/favorites' element={<Favorites/>}/>
           <Route path='/account/personaldata' element={<PersonalData/>}/>
           <Route path='/account/mysupplements' element={<MySupplements/>}/>

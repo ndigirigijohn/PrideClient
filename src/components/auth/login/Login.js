@@ -37,7 +37,7 @@ const onUpdateField = e => {
         (res)=>{
           localStorage.setItem('user', JSON.stringify(res.data));
           localStorage.setItem('skincode', JSON.stringify(res.data.skincode));
-          navigate('/cart')
+          navigate('/')
         }
       )
       .catch((err)=>{

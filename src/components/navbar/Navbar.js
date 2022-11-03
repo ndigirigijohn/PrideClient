@@ -26,7 +26,7 @@ function Navbar() {
   const url=`https://prideserver.herokuapp.com/1/9`
   const [search, setSearch] = useState("");
   const getProducts= axios.get(url)
-  const user=localStorage.getItem('user')
+  const user=JSON.parse(localStorage.getItem('user'))
   const [over, setOver] = useState('none')
   const [itemsCount, setItemsCount]= useState(0)
 
@@ -80,10 +80,11 @@ function Navbar() {
       return '/auth/login'
     }
     else{
-      if(user.role=='customer'){
-        return '/account/orders'
+            if(user.role==='customer'){
+        
+        return '/account/personaldata'
       }
-      else return '/admin'
+      else return '/admin/dashboard'
     }
   }
   return (
@@ -166,17 +167,8 @@ function Navbar() {
       <a href='#about'>ABOUT US</a>
  
       </div>
-
-
-
-
       </div>
-
-
-      
       </div>
-
-
     </div>
   )
 }
