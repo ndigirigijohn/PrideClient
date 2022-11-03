@@ -75,6 +75,17 @@ function Navbar() {
   
   }, [cart, dispatch, itemsCount])
 
+  const acc=()=>{
+    if(user==null){
+      return '/auth/login'
+    }
+    else{
+      if(user.role=='customer'){
+        return '/account/orders'
+      }
+      else return '/admin'
+    }
+  }
   return (
     <div className='navbar'>
       <div className="navdesk">
@@ -110,7 +121,7 @@ function Navbar() {
       </Link>
       </div>
       <div className="account">
-      <Link className='acc' to={user===null?'/auth/login':'/account'}>
+      <Link className='acc' to={acc()}>
         <FcBusinesswoman/>
       </Link>
 
@@ -147,7 +158,7 @@ function Navbar() {
       <Link to='/fms'>FIND SUPPLEMENT</Link>
       </div>
       <div className="">
-      <Link className='' to={user===null?'/auth/login':'/account'}>
+      <Link className='' to={acc()}>
         ACCOUNT
       </Link>
       </div>
