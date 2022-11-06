@@ -22,10 +22,9 @@ import PersonalData from './components/Account/sections/PersonalData';
 import Password from './components/Account/sections/Password';
 import MySupplements from './components/Account/sections/MySupplements';
 import OrdersA from './components/admin/orders/Orders';
-import Dahboard from './components/admin/dashboard/Dashboard';
 import Offers from './components/admin/offers/Offers';
 import Products from './components/admin/products/Products';
-import Statistics from './components/admin/statistics/Statistics';
+import Customers from './components/admin/customers/Customers';
 import Stock from './components/admin/stock/Stock';
 import Dashboard from './components/admin/dashboard/Dashboard';
 function App() {
@@ -51,9 +50,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/admin' element={<Admin/>}>
-          <Route path='/admin/dashboard' index element={<Dahboard/>}/>
+          <Route path='/admin/dashboard' index element={<Dashboard/>}/>
           <Route path='/admin/orders' element={<OrdersA/>}/>
-          <Route path='/admin/statistics' element={<Statistics/>}/>
+          <Route path='/admin/customers' element={<Customers/>}/>
           <Route path='/admin/products' element={<Products/>}/>
           <Route path='/admin/offers' element={<Offers/>}/>
           <Route path='/admin/stock' element={<Stock/>}/>          

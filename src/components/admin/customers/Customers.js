@@ -2,13 +2,13 @@ import React from 'react'
 import AdminNav from '../adminnav/AdminNav'
 
 
-function Statistics() {
+function Customers() {
   return (
     <div>
-             <AdminNav title={'Statistics'}/>
+             <AdminNav title={'Customers'}/>
 
     </div>
   )
 }
 
-export default Statistics
+export default Customers

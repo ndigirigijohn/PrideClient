@@ -28,7 +28,7 @@ function Admin() {
             <Link to='/admin/orders'><AiOutlineShoppingCart/><p>Orders</p></Link>
           </div>
           <div>
-            <Link to='/admin/statistics'><FiPieChart/><p>Statistics</p></Link>
+            <Link to='/admin/customers'><FiPieChart/><p>Customers</p></Link>
           </div>
           <div>
             <Link to='/admin/products'><RiProductHuntFill/><p>Products</p></Link>
