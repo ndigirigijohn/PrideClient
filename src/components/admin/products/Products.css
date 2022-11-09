@@ -1,0 +1,30 @@
+.admin_products {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 100vh;
+    gap: 5px;
+    overflow-y: scroll;
+}
+.admin_product, .admin_product_head {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 30px;
+    padding: 5px 0;
+    
+    display: grid;
+    margin: 0 20px ;
+    border-radius: 10px;
+    border: 1px solid #c9104e;
+}
+.admin_product_head {
+    color: #c9104e;
+}
+.admin_product {
+    min-height: 100px;
+}
+.product_img img {
+    max-height: 50px;
+
+}
+

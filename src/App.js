@@ -29,7 +29,7 @@ import Stock from './components/admin/stock/Stock';
 import Dashboard from './components/admin/dashboard/Dashboard';
 function App() {
   const dispatch = useDispatch();
-  const url=`https://prideserver.herokuapp.com/1/9`
+  const url=`https://prideserver.herokuapp.com/all/random`
   const getProducts= axios.get(url)
   useEffect(()=>{
     dispatch(changeProduct([]));

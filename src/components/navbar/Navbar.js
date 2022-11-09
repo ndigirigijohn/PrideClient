@@ -23,7 +23,7 @@ function Navbar() {
   const cart = useSelector((state) => state.cart);
 
 
-  const url=`https://prideserver.herokuapp.com/1/9`
+  const url=`https://prideserver.herokuapp.com/all/random`
   const [search, setSearch] = useState("");
   const getProducts= axios.get(url)
   const user=JSON.parse(localStorage.getItem('user'))

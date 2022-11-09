@@ -147,13 +147,13 @@ const FMS2=<div className='fms_div'>
    <button onClick={()=>{
         setCode(code+'10')
                   setX(x+1)
-                }} className="fms_button">COMBO</button>
+                }} className="fms_button">COMBO (DRY/ OILY)</button>
 </div>
 
 const FMS1=<div className='fms_div'>
                 <button onClick={()=>{
                   setX(x+1)
-                }} className="fms_button">FIND MY PRODUCTS</button>
+                }} className="fms_button">FIND PRODUCTS</button>
                 <button onClick={()=>{
                     setX(4)
                  
