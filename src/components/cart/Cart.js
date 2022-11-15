@@ -246,7 +246,7 @@ const handleCheckout=()=>{
               </div>
               <button onClick={()=>{
                 handleCheckout()
-              }} className='checkout'>PROCEED TO PAYMENT</button>
+              }} className='checkout'>PROCEED TO PAY</button>
             </div>
 
           </div>
