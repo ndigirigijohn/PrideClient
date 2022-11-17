@@ -33,6 +33,10 @@ function Products() {
              <AdminNav title={'Customer'}/>
              <AddSearch title={'customer'} addAction={addCustomer} searchAction={searchCustomer}/>
              <div className="admin_customer_head">
+              <div className='id'>
+                ID
+
+              </div>
                 <div className="name">
                   Username
                 </div>
@@ -47,17 +51,14 @@ function Products() {
                   skincode
   
                 </div>
-                <div className="edit">
-                Edit
-                </div>
-                <div className="rm">
-                Remove
-                </div>
                </div>
 
              {
               customers.map((user)=>{
                 return             <div className="admin_customer">
+                  <div className="id">
+                    {user._id}
+                  </div>
                 <div className="name">
                   {user.username}
                 </div>
@@ -71,12 +72,6 @@ function Products() {
                 <div className="category">
                   {user.skincode}
   
-                </div>
-                <div className="edit">
-                  <button>Edit</button>
-                </div>
-                <div className="rm">
-                  <button>Remove</button>
                 </div>
                </div>
   

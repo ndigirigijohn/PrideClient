@@ -27,4 +27,19 @@
     max-height: 50px;
 
 }
+.admin_product button{
+    background-color: azure;
+    padding: 5px;
+    min-width: 80px;
+    margin: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+.admin_product button:hover {
+    background-color: #ca225a;
+    color: white;
+}
 
