@@ -63,7 +63,7 @@ function Account() {
             </div>
 
             <div>
-              <Link to='/account/password'><AiOutlineLock/><p>Change password</p><BiChevronRight/></Link>
+              <Link to='/account/dataupdate'><AiOutlineLock/><p>Update Data</p><BiChevronRight/></Link>
             </div>
             <div>
               <Link to='/account/mysupplements'><CgProductHunt/><p>My supplements</p><BiChevronRight/></Link>

@@ -75,7 +75,11 @@ const handleSearch = event => {
 
 const SEARCH=<div className='fms_div'>
 <p>Enter a key word or the name of your product to search</p>
-<div className='search_box'>
+<div className='select_div'>
+  <p>
+    Category to search:
+  </p>
+
 <select className='select' onChange={(e)=>{
   setOptionsState(e.target.value)
 
@@ -89,6 +93,10 @@ const SEARCH=<div className='fms_div'>
 
 
 </select>
+</div>
+
+<div className='search_box'>
+
 <input 
           onKeyDown={(e)=>{
             e.key==='Enter' && handleSearch()          

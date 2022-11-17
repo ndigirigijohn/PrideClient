@@ -19,7 +19,7 @@ import Result from './components/result/Result';
 import Orders from './components/Account/sections/Orders';
 import Favorites from './components/Account/sections/Favorites';
 import PersonalData from './components/Account/sections/PersonalData';
-import Password from './components/Account/sections/Password';
+import DataUpdate from './components/Account/sections/DataUpdate';
 import MySupplements from './components/Account/sections/MySupplements';
 import OrdersA from './components/admin/orders/Orders';
 import Offers from './components/admin/offers/Offers';
@@ -64,7 +64,7 @@ function App() {
           <Route path='/account/favorites' element={<Favorites/>}/>
           <Route path='/account/personaldata' element={<PersonalData/>}/>
           <Route path='/account/mysupplements' element={<MySupplements/>}/>
-          <Route path='/account/password' element={<Password/>}/>
+          <Route path='/account/dataupdate' element={<DataUpdate/>}/>
         </Route>
         <Route path='/sequel' element={<Sequel/>}/>
         <Route path='/result/:category/:search' element={<Result/>}/>

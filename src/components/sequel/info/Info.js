@@ -5,7 +5,7 @@ function Info() {
   const user = JSON.parse(localStorage.getItem('user'))
   
   return (
-    <div className='info_head' ><h1>Hello {user===null?'':user.name}, the following products are suitable for your skin </h1></div>
+    <div className='info_head' ><h1>Hello {user===null?'':user.username}, the following products are suitable for your skin </h1></div>
   )
 }
 
