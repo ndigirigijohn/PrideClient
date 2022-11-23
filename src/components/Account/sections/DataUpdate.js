@@ -5,7 +5,7 @@ function DataUpdate() {
   const user = JSON.parse(localStorage.getItem('user'))
   return (
     <form className='update_password'>
-      <h3>Update  Personal Data</h3>
+      <h3>Update Personal Data</h3>
       <input type="text" placeholder={user.username} />
       <input type="text" placeholder={user.contact.email} />
       <input type="text" placeholder={user.contact.phone}/>
