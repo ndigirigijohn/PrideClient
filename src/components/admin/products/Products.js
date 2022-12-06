@@ -23,7 +23,7 @@ function Products() {
   const [products, setProducts] = useState([])
   useEffect(()=>{
 
-    axios.get(`https://prideserver.herokuapp.com/byPage/${page}/${limit}`).then((res)=>{
+    axios.get(`http://localhost:8080/byPage/${page}/${limit}`).then((res)=>{
       console.log('connected', res.data)
       setProducts(res.data)
     })
@@ -37,7 +37,7 @@ function Products() {
   }
   const searchProduct=(e)=>{
     console.log(e.target.value)
-    axios.get(`https://prideserver.herokuapp.com/products/search/${e.target.value}`).then((res)=>{
+    axios.get(`http://localhost:8080/products/search/${e.target.value}`).then((res)=>{
       console.log('connected', res.data)
       setProducts(res.data)
     })

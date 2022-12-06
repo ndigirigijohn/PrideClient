@@ -7,7 +7,7 @@ function Confirm({action,id,classname}) {
     const deleteProduct=(id)=>{
       toast.success("Deleting product");
     
-        axios.delete(`https://prideserver.herokuapp.com/${id}`).then((res)=>{
+        axios.delete(`http://localhost:8080/${id}`).then((res)=>{
           console.log('connected', res.data)
           toast.success("Product deleted");
 

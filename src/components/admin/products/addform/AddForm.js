@@ -41,7 +41,7 @@ function AddForm({action,classname}) {
         
 
 
-        axios.post('https://prideserver.herokuapp.com/',form).then((res)=>{
+        axios.post('http://localhost:8080/',form).then((res)=>{
             console.log(res)
             setForm(initialForm)
             toast.success("Product added");

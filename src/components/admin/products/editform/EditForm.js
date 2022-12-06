@@ -51,7 +51,7 @@ function EditForm({action,classname,product}) {
 
         
 
-        axios.put(`https://prideserver.herokuapp.com/${product._id}`,form).then((res)=>{
+        axios.put(`http://localhost:8080/${product._id}`,form).then((res)=>{
             console.log(res)
             setForm({
               name:"",

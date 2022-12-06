@@ -1,5 +1,4 @@
 import React from 'react'
-import Products from '../products/Products'
 import './Account.css';
 import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../navbar/Navbar'
@@ -22,18 +21,18 @@ import { changeProduct } from "../../redux/slices/productSlice";
 
 function Account() {
   const dispatch = useDispatch();
-  const content1=<div>
-    Set your skin code on the FMS page <Link style={{color:"blue", cursor:"pointer"}} to='/fms'>here</Link> to see your products 
+  // const content1=<div>
+  //   Set your skin code on the FMS page <Link style={{color:"blue", cursor:"pointer"}} to='/fms'>here</Link> to see your products 
 
-  </div>
-  const [productContent, setProductContent] = React.useState(content1);
+  // </div>
+  // const [productContent, setProductContent] = React.useState(content1);
 
   const user = JSON.parse(localStorage.getItem('user'))
   const skincode=JSON.parse(localStorage.getItem('skincode'))
   if(skincode!==""){
-    axios.get(`https://prideserver.herokuapp.com/code/a/z/${skincode}`).then((res)=>{
+    axios.get(`http://localhost:8080/code/a/z/${skincode}`).then((res)=>{
       dispatch(changeProduct(res.data)) ;
-      setProductContent(<Products/>)
+      // setProductContent(<Products/>)
   
   })
 }
@@ -83,7 +82,7 @@ function Account() {
 
           </div>
           <div className="acc_contents">
-            <Outlet index/>
+            <Outlet/>
 
           </div>
         </div>

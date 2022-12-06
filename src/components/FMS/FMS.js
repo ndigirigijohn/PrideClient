@@ -74,7 +74,7 @@ const handleSearch = event => {
 }
 
 const SEARCH=<div className='fms_div'>
-<p>Enter a key word or the name of your product to search</p>
+<p>Enter ingridient or the name of your product to search</p>
 <div className='select_div'>
   <p>
     Category to search:
@@ -89,7 +89,6 @@ const SEARCH=<div className='fms_div'>
   <option value="cleansers">Cleansers</option>
   <option value="facemasks">Face Masks</option>
   <option value="toners">Toners</option>
-  <option value="combo">Combo</option>
 
 
 </select>
@@ -116,7 +115,7 @@ const SEARCH=<div className='fms_div'>
 
 
 const FMS4=<div className='fms_div'>
-<p>Do you have any blackhead spots?</p>
+<p>Do you have any black spots?</p>
  <button onClick={()=>{
                 setCode(code+'1');
                 setFlag(true);
@@ -155,7 +154,7 @@ const FMS2=<div className='fms_div'>
    <button onClick={()=>{
         setCode(code+'10')
                   setX(x+1)
-                }} className="fms_button">COMBO (DRY/ OILY)</button>
+                }} className="fms_button">COMBINATION (DRY/ OILY)</button>
 </div>
 
 const FMS1=<div className='fms_div'>

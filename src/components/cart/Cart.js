@@ -119,7 +119,7 @@ const handleCheckout=()=>{
     "email":user.contact.email,
     "count":itemsCount,
     "shipping":shipping,
-    "total":total,
+    "total":total+shipping,
     "items":cart
 }
 
