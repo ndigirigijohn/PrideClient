@@ -11,7 +11,7 @@ export const emailValidator=(email,errors, setErrors)=>{
       }
     else{
         
-        axios.get(`https://prideserver.herokuapp.com/users/check/{email}`).then(res=>{
+        axios.get(`http://localhost:8080/users/check/{email}`).then(res=>{
             if(res.status===409){
               err.email=true
 

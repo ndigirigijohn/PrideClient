@@ -11,12 +11,49 @@ function Feedback() {
   const [form, setForm]=useState({
     name:'',
     email:'',
-    content:'',
+    product:'',
+    message:'',
 });
+const [errors, setErrors] = useState({
+  name: '',
+  email: '',
+  product: '',
+  message: ''
+})
 const notify = () => {
   toast.success("Feedback sent");
 }
+const validateForm = (fieldName, value) => {
+  let err;
+  const formErrors=errors;
+  switch(fieldName) {
+      case 'name':
+          err= value.length<3?'Name must be atleast 3 characters':''
+          formErrors.name=err;
+          setErrors(formErrors)
+         break;
+         case 'email':
+          //validate email
+          const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+          err= valid?'':'Email is not valid'
+          formErrors.email=err;
+          setErrors(formErrors) 
+         break;
+         case 'product':
+          err= value.length<3?'Product name must be atleast 3 characters':''
+          formErrors.product=err;
+          setErrors(formErrors)
+         break;
 
+         case 'message':
+          err= value.length<9?'Message must be longer than 9 characters':''
+          formErrors.message=err;
+          setErrors(formErrors)
+         break;
+      default:   
+
+}
+}
 
 
 const onUpdateField = e => {
@@ -28,7 +65,13 @@ const onUpdateField = e => {
   };
   const onSubmitForm = e => {
     e.preventDefault();
-      axios.post('https://prideserver.herokuapp.com/feedback', form).then(
+    if(Object.values(errors).some(err=>err!=='')){
+      toast.error("Error, invalid input");
+      // alert("Error, invalid input");
+  
+      return;
+  }
+      axios.post('http://localhost:8080/feedback', form).then(
         (res)=>{
           notify();
         }
@@ -49,10 +92,28 @@ const onUpdateField = e => {
         <div className="feedback_container">
         <h3>Leave feedback</h3>
         <form onSubmit={onSubmitForm}>
-            <input onChange={onUpdateField} name="name" type="text" placeholder="Name"/>
-            <input onChange={onUpdateField} name="email" type="text" placeholder="Email"/>
+            <input onChange={(e)=>{
+                onUpdateField(e);
+                validateForm(e.target.name,e.target.value)
+            } } name="name" type="text" placeholder="Name"/>
+            <div style={{color:"red"}} className="error">{errors.name}</div>
+            <input onChange={(e)=>{
+                onUpdateField(e);
+                validateForm(e.target.name,e.target.value)
+            } } name="email" type="text" placeholder="Email"/>
+            <div style={{color:"red"}} className="error">{errors.email}</div>
+            <input onChange={(e)=>{
+                onUpdateField(e);
+                validateForm(e.target.name,e.target.value)
+            } } name="product" type="text" placeholder="Product you are reviewing"/>
+            <div style={{color:"red"}} className="error">{errors.product}</div>
 
-            <textarea placeholder='Message' onChange={onUpdateField} name="content" id="" cols="30" rows="5"></textarea>
+          
+            <textarea placeholder='Message' onChange={(e)=>{
+                onUpdateField(e);
+                validateForm(e.target.name,e.target.value)
+            } } name="message" id="" cols="30" rows="5"></textarea>
+            <div style={{color:"red"}} className="error">{errors.message}</div>
             <div className="send">
                 <button  type='submit'>SEND</button>
             </div>
