@@ -23,7 +23,7 @@ function Navbar() {
   const cart = useSelector((state) => state.cart);
 
 
-  const url=`https://prideserver.herokuapp.com/all/random`
+  const url=`http://localhost:8080/all/random`
   const [search, setSearch] = useState("");
   const getProducts= axios.get(url)
   const user=JSON.parse(localStorage.getItem('user'))
@@ -47,7 +47,7 @@ function Navbar() {
     if (event.key === 'Enter') {
       console.log(search)
       console.log('Enter key pressed ✅');
-      const url=`https://prideserver.herokuapp.com/products/search/${search}`
+      const url=`http://localhost:8080/products/search/${search}`
       axios.get(url).then((response)=>{
         dispatch(changeProduct(response.data)) 
         navigate(`/result/all/${search}`)
